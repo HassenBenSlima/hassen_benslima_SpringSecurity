@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
  * 1ere Filter
  * qui va etre utiliser au moement de l'authentification
  * apres le saisi de login et mot de passe , je vais generer un token
+ * contien 2 methods
  */
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -47,6 +48,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         System.out.println("attemptAuthentication");
+        //le username et le login sont envoyé par un formulaire simple //n'est pas JSON
         String username = request.getParameter("userName");
         String password = request.getParameter("password");
         System.out.println(username);

@@ -50,7 +50,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
         } else {
             //a chaque fois qu'il y a une requete qui arrive la requete doit presenter le visa
             String authorizationToken = request.getHeader(JWTUtil.AUTH_HEADER);
-            //il y a l'authotifiv=cation basic et l'authentification bearer qui contient un token c'est un prefixe qui est utilisé
+            //il y a l'authotification basic et l'authentification bearer qui contient un token c'est un prefixe qui est utilisé
             if (authorizationToken != null && authorizationToken.startsWith(JWTUtil.PREFIX)) {
                 try {
                     //ignorer les 7 permier character de la chaine
